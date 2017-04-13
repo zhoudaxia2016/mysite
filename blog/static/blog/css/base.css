@@ -1,0 +1,50 @@
+/* css-reset */
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none;}
+a:hover{color: #495a80;}
+/* css-reset */
+
+body{background: #f8f8fa;}
+
+/* 导航栏 */
+nav{
+  box-shadow: 0px .4px .5px #aaa;
+  overflow: hidden;
+  background: #fff;
+}
+.logo,
+nav li a{
+  float: left;
+  line-height: 50px;
+  color: #333;
+  padding: 0 10px;
+  font-weight: bold;
+  color: #777;
+}
+.logo{
+  margin-left: 10%;
+  margin-right: 40px;
+  font-family:  Verdana;
+}
+h1{
+  color: #495a80;
+}
+nav li{
+  float: left;
+  margin: 0 20px;
+}
+nav li:hover:not(.thepage){
+  border-bottom: 4px solid #aaf;
+}
+.thepage{
+  border-bottom: 4px solid #495a80;
+}
+/* 导航栏 */
+
+/* footer */
+footer{
+  text-align: center;
+  margin-top: 30px;
+  clear: both;
+}

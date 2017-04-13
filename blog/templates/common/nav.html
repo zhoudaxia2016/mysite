@@ -1,0 +1,30 @@
+<nav>
+  <div class="logo"><a href="/index.html"><h1>MaoZz<h1></a></div>
+  <ul>
+  <!--设置当前页面--!>
+    {% ifequal page 0 %}
+    <li class="thepage"><a href="/index.html">home</a></li>
+    {% else %}
+    <li><a href="/index.html">home</a></li>
+    {% endifequal %}
+
+    {% ifequal page 1 %}
+    <li class="thepage"><a href="/blog">blogs</a></li>
+    {% else %}
+    <li><a href="/blog">blogs</a></li>
+    {% endifequal %}
+
+    {% ifequal page 2 %}
+    <li class="thepage"><a href="/demo">demos</a></li>
+    {% else %}
+    <li><a href="/demo">demo</a></li>
+    {% endifequal %}
+
+    {% ifequal page 3 %}
+    <li class="thepage"><a href="/about">about</a></li>
+    {% else %}
+    <li><a href="/about">about</a></li>
+    {% endifequal %}
+
+  </ul>
+</nav>

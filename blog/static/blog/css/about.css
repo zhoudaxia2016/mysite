@@ -1,0 +1,35 @@
+.container h2{
+  text-align: center;
+  padding: 10px;
+  border-bottom: #aaa solid 2px;
+  font-weight: bold;
+  color: #444;
+}
+.content,
+.event{
+  float: left;
+  margin-bottom: 30px;
+}
+.content{
+  margin-top: 30px;
+  margin-left: 10%;
+  width: 55%;
+  background: #fff;
+  box-shadow: 3px 3px 3px #aaa;
+}
+.content *{
+  margin: 20px;
+}
+.content h3{
+  position: relative;
+  color: #444;
+}
+.content h3::before{
+  position: absolute;
+  width: 5px;
+  height: 100%;
+  content: '';
+  top: 0;
+  left: -10px;
+  background: #444;
+}

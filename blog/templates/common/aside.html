@@ -1,0 +1,18 @@
+<aside>
+  {% if family %}
+  <div class="type-list">
+    <h2>类别</h2>
+    <ul>
+      {% for f in family %}
+      <li><a href='?t={{f.name}}'>{{f.title}}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  <div class="tag-list">
+    <h2>标签</h2>
+    {% for tag in tags %}
+    <a href="?ta={{tag.name}}">{{ tag.name }}</a>
+    {% endfor %}
+  </div>
+</aside>

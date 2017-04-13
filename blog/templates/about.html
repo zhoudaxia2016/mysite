@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Keywords" content="maozz,blog,js,css,front-end">
+  <meta name="description" content="这是maozz的博客，记录这学习前端的点点滴滴，记录着我的进步">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>About me - Maozz's blog</title>
+  {% load static %}
+  <link href="{% static 'blog/css/base.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/css/about.css' %}" rel="stylesheet">
+  <script src="{% static 'blog/js/base.js' %}"></script>
+</head>
+<body>
+{% include 'common/nav.html' %}
+
+<div class="container">
+  <div class="content">
+    <h2>关于我</h2>
+    <div class="point">
+      <h3>个人简介</h3>
+      <p>一个喜欢编程的信计专业学生</p>
+      <p>上大学之前喜欢的是数学，但是上大学了解到神奇的c++，就爱上了编程，希望可以用自己学到的编程知识可以做出有意思的东西</p>
+    </div>
+    <div class="point">
+      <h3>这个网站用途</h3>
+      <p>记录自己在前端学习道路中遇到的困难，有趣的东西以及心得体会，还有自己做的小东西。更重要的是可以让别人看到我拉。</p>
+    </div>
+    <div class="point">
+      <h3>个人技能</h3>
+      <p>正在学习html,css,js,django中，准备学习vue，nginx</p>
+    </div>
+    <div class="point">
+      <h3>个人目标</h3>
+      <p>希望赶上今年的秋招！</p>
+    </div>
+    <div class="point">
+      <h3>兴趣爱好</h3>
+      <p>魔方，中国象棋，上b站看剧</p>
+    </div>
+  </div>
+</div>
+
+{% include 'common/footer.html' %}
+</body>
+</html>

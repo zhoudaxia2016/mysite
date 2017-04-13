@@ -1,0 +1,46 @@
+aside{
+  float: left;
+  margin: 30px 5%;
+  width: 20%;
+}
+aside>*{
+  margin-bottom: 30px;
+  box-shadow: 1px 1px 1px #ddd;
+  border-radius: 2px;
+  width: 100%;
+  background: #fff;
+}
+
+aside h2{
+  padding: 10px;
+  font-size: 20px;
+  border-bottom: .1px solid #ddd;
+}
+
+.type-list li:hover{
+  background: #ddd;
+}
+.type-list a{
+  color: #555;
+  line-height: 30px;
+  display: block;
+  width: 100%;
+  margin-left: 10px;
+}
+.current-type{
+  background: #26cb7c;
+  color: #fff;
+}
+
+
+.tag-list a{
+  display: inline-block;
+  padding: 5px;
+  background: #26cb7c;
+  border-radius: 2px;
+  margin: 5px;
+  color: #222;
+}
+.tag-list a:hover{
+  color: #eee;
+}

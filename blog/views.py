@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from django.http import HttpResponse
+from markdown2 import markdown
 
 # Create your views here.
 # 获取标签或者类别
@@ -19,9 +20,9 @@ def sort(request,posts):
   s = request.GET.get('s',False)
   if s:
     if s == 'n':
-      return sorted(posts,key=lambda p:p.publish_time)
+      return sorted(posts,key=lambda p:p.publish_time,reverse=True)
     else:
-      return sorted(posts,key=lambda p:p.view)
+      return sorted(posts,key=lambda p:p.view,reverse=True)
   else:
     return posts
 
@@ -57,3 +58,13 @@ def about(request):
 def event(request):
   events = Event.objects.all()
   return render(request,'event.html',{'events':events,'page':3})
+
+def detail(request,id):
+  try:
+    blog=Blog.objects.get(id=id)
+    blog.view += 1
+    blog.save()
+    blog.content = markdown(blog.content)
+    return render(request,'blog.html',{'blog':blog,'page':1})
+  except Blog.DoesNotExist as err:
+    return HttpResponse(status=404)

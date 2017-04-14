@@ -37,3 +37,10 @@ class Blog(Post):
   def __str__(self):
     return 'Blog: %s' %self.title
 
+class Event(models.Model):
+  publish_time = models.DateField()
+  description = models.TextField()
+  is_major = models.BooleanField(default=False)
+
+  def __str__(self):
+    return self.description[:10]

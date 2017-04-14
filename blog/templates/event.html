@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Keywords" content="maozz,blog,js,css,front-end">
+  <meta name="description" content="这是maozz的博客，记录这学习前端的点点滴滴，记录着我的进步">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>About The Site - Maozz's blog</title>
+  {% load static %}
+  <link href="{% static 'blog/css/base.css' %}" rel="stylesheet">
+  <link href="{% static 'blog/css/event.css' %}" rel="stylesheet">
+  <script src="{% static 'blog/js/base.js' %}"></script>
+</head>
+<body>
+{% include 'common/nav.html' %}
+
+<div class="event">
+  <h2> 建站日志 </h2>
+  <div class="trunk">
+  {% for event in events %}
+  {% if event.is_major %}
+  <div class="major-event">
+    <span class="event-time">{{ event.publish_time | date:'Y-m-d' }}</span>
+    <span class="event-desc">{{ event.description }}</span>
+  </div>
+  {% else %}
+  <div class="minor-event">
+    <span class="event-time">{{ event.publish_time | date:'Y-m-d' }}</span>
+    <span class="event-desc">{{ event.description }}</span>
+  </div>
+  {% endif %}
+  {% endfor %}	
+  </div>
+</div>
+
+{% include 'common/footer.html' %}
+</body>
+</html>
+

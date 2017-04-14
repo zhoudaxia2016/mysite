@@ -53,3 +53,7 @@ def demo(request):
 
 def about(request):
   return render(request,'about.html',{'page':3})
+
+def event(request):
+  events = Event.objects.all()
+  return render(request,'event.html',{'events':events,'page':3})

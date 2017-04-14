@@ -7,5 +7,6 @@ urlpatterns = [
     url(r'^blog/?$',views.blog,name='blog'),
     url(r'^demo/?$',views.demo,name='demo'),
     url(r'^about/?$',views.about,name='about'),
+    url(r'^event/?$',views.event,name='event'),
     url(r'^$',views.index,name='index'),
 ]

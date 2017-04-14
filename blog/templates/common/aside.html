@@ -1,10 +1,20 @@
 <aside>
+  <div class="sort">
+    <h2>排序</h2>
+    <ul>
+      <li><a href="?s=h">最新</a></li>
+      <li><a href="?s=n">最热</a></li>
+    </ul>
+  </div>
   {% if family %}
   <div class="type-list">
     <h2>类别</h2>
     <ul>
+      <li><a href='/index.html'>所有</a></li>
       {% for f in family %}
+      {% ifnotequal f.name 'demo' %}
       <li><a href='?t={{f.name}}'>{{f.title}}</a></li>
+      {% endifnotequal %}
       {% endfor %}
     </ul>
   </div>

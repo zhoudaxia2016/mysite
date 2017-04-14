@@ -17,9 +17,11 @@ aside h2{
   border-bottom: .1px solid #ddd;
 }
 
+.sort li:hover,
 .type-list li:hover{
   background: #ddd;
 }
+.sort a,
 .type-list a{
   color: #555;
   line-height: 30px;
@@ -41,6 +43,7 @@ aside h2{
   margin: 5px;
   color: #222;
 }
+
 .tag-list a:hover{
   color: #eee;
 }

@@ -1,0 +1,54 @@
+.login{
+  width: 320px;
+  margin: 100px auto;
+  background: #fff;
+  border-top: 5px solid #495a80;
+  height: auto;
+  text-align: center;
+}
+.login div{
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+input[type=text],
+input[type=password]{
+  float: right;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+input[type=text]:focus,
+input[type=password]:focus{
+  border: 2px solid #495a80;
+}
+
+span{
+  font-weight: bold;
+}
+
+input[type=submit]{
+  margin-bottom: 10px;
+  background: #26cb7c;
+  border: none;
+  font-size: 16px;
+  line-height: 26px;
+  height: 26px;
+  color: #ddd;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+input[type=submit]:hover{
+  background: #26aa7c;
+  color: #fff;
+}
+
+body{
+  background: #f5f8fa;
+}
+h2{
+  text-align: center;
+}
+
+footer{
+  text-align: center;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Keywords" content="maozz,blog,js,css,front-end,web">
+  <meta name="description" content="这是maozz的博客，记录这学习前端的点点滴滴，记录着我的进步">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>注册-Maozz's blog</title>
+  {% load static %}
+  <link href="{% static 'login/css/login.css' %}" rel="stylesheet">
+  <script src="{% static 'login/js/login.js' %}"></script>
+</head>
+<body>
+  <form class="login" method="post" action="/login/signup">
+    {% csrf_token %}
+    <h2>注册</h2>
+    <div>
+      <span>用户名</span><input type="text" class="username" name="username"><br>
+    </div>
+    <div>
+      <span>密码</span> <input type="password" class="password"><br>
+    </div>
+    <div>
+      <span>确认密码</span> <input type="password" class="password" name="password"><br>
+    </div>
+    <input type="submit" value="确定">
+  </form>
+{% include 'common/footer.html' %}
+</body>
+</html>
+
+

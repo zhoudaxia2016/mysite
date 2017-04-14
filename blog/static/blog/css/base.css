@@ -40,6 +40,33 @@ nav li:hover:not(.thepage){
 .thepage{
   border-bottom: 4px solid #495a80;
 }
+
+/* login */
+.login{
+  margin-right: 20%;
+  float: right;
+  font-size: 16px;
+  line-height: 30px;
+  margin-top: 10px;
+}
+.welcome,
+.logout,
+.signin,
+.signup{
+  background: #26cb7c;
+  margin-right: 20px;
+  display: inline-block;
+  padding: 0 10px;
+  border-radius: 3px;
+  color: #eee;
+  font-weight: bold;
+}
+.login a:hover{
+  color: #fff;
+  background: #26aa7c;
+}
+/* login */
+
 /* 导航栏 */
 
 /* footer */
@@ -48,3 +75,4 @@ footer{
   margin-top: 30px;
   clear: both;
 }
+/* footer */

@@ -34,7 +34,9 @@ def index(request):
   tags = Tag.objects.all()
   posts = sort(request,posts)
   posts = filter(request,posts)
-  return render(request,'index.html',{'posts':posts,'page':0,'family':family,'tags':tags})
+  user = request.session.get('user',False)
+  print(user)
+  return render(request,'index.html',{'user':user,'posts':posts,'page':0,'family':family,'tags':tags})
 
 
 def blog(request):
@@ -43,21 +45,25 @@ def blog(request):
   tags = Tag.objects.all()
   posts = sort(request,posts)
   posts = filter(request,posts)
-  return render(request,'index.html',{'posts':posts,'page':1,'family':family,'tags':tags})
+  user = request.session.get('user',False)
+  return render(request,'index.html',{'user':user,'posts':posts,'page':1,'family':family,'tags':tags})
 
 def demo(request):
   posts = Demo.objects.all()
   tags = Tag.objects.all()
   posts = sort(request,posts)
   posts = filter(request,posts)
-  return render(request,'index.html',{'posts':posts,'page':2,'tags':tags})
+  user = request.session.get('user',False)
+  return render(request,'index.html',{'user':user,'posts':posts,'page':2,'tags':tags})
 
 def about(request):
-  return render(request,'about.html',{'page':3})
+  user = request.session.get('user',False)
+  return render(request,'about.html',{'user':user,'page':3})
 
 def event(request):
   events = Event.objects.all()
-  return render(request,'event.html',{'events':events,'page':3})
+  user = request.session.get('user',False)
+  return render(request,'event.html',{'user':user,'events':events,'page':3})
 
 def detail(request,id):
   try:

@@ -47,3 +47,7 @@ aside h2{
 .tag-list a:hover{
   color: #eee;
 }
+
+.words a{
+  color: #444;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Keywords" content="maozz,blog,js,css,front-end">
+  <meta name="description" content="这是maozz的博客，记录这学习前端的点点滴滴，记录着我的进步">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <title>Leave Words - Maozz's blog</title>
+  {% load static %}
+  <link href="{% static 'blog/css/base.css' %}" rel="stylesheet">
+  <link href="{% static 'word/css/word.css' %}" rel="stylesheet">
+</head>
+<body>
+{% include 'common/nav.html' %}
+
+<div class="container">
+  <h2> 留下几句话大家互相认识一下吧～ </h2>
+  <div class="words">
+    <h2> {{ words | length }} 条留言 </h2>
+
+    <form class="leave" method="post" action="/word/leave/">
+      {% csrf_token %}
+      <textarea name="content" cols="60"></textarea><br>
+      <input type="submit" value="提交" class="submit">
+    </form>
+
+    {% for word in words %}
+    <div class="word">
+      <div class="word-user">{{ word.user}} 说：</div>
+      <div class="word-time">{{ word.publish_time | date:'Y-m-d h:m:s' }}</div>
+      <p class="word-content">{{ word.content }}</p>
+    </div>
+    {% endfor %}
+
+</div>
+
+</div>
+
+{% include 'common/footer.html' %}
+</body>
+</html>
+

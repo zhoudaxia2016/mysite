@@ -25,4 +25,11 @@
     <a href="?ta={{tag.name}}">{{ tag.name }}</a>
     {% endfor %}
   </div>
+
+  <div class="words">
+    <h2><a href="/word/">留言</a></h2>
+    {% for word in words %}
+    <div>{{ word.content }}
+    {% endfor %}
+  </div>
 </aside>

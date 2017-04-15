@@ -28,9 +28,9 @@
   </ul>
 
   <div class="login">
-    {% if user %}
+    {% if user.username %}
     <span><a href="/login/logout" class="logout">退出</a></span>
-    <span class="welcome">你好！{{user}}</span>
+    <span class="welcome">你好！{{user.username}}</span>
     {% else %}
     <span><a href="/login?f=in" class="signin">登陆</a></span>
     <span><a href="/login?f=up" class="signup">注册</a></span>

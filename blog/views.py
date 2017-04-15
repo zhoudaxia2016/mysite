@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import *
 from django.http import HttpResponse
 from markdown2 import markdown
+from comment.models import Comment
 
 # Create your views here.
 # 获取标签或者类别
@@ -34,8 +35,7 @@ def index(request):
   tags = Tag.objects.all()
   posts = sort(request,posts)
   posts = filter(request,posts)
-  user = request.session.get('username',False)
-  print(user)
+  user = request.session.get('us',False)
   return render(request,'index.html',{'user':user,'posts':posts,'page':0,'family':family,'tags':tags})
 
 
@@ -45,7 +45,7 @@ def blog(request):
   tags = Tag.objects.all()
   posts = sort(request,posts)
   posts = filter(request,posts)
-  user = request.session.get('username',False)
+  user = request.session.get('us',False)
   return render(request,'index.html',{'user':user,'posts':posts,'page':1,'family':family,'tags':tags})
 
 def demo(request):
@@ -53,16 +53,16 @@ def demo(request):
   tags = Tag.objects.all()
   posts = sort(request,posts)
   posts = filter(request,posts)
-  user = request.session.get('username',False)
+  user = request.session.get('us',False)
   return render(request,'index.html',{'user':user,'posts':posts,'page':2,'tags':tags})
 
 def about(request):
-  user = request.session.get('username',False)
+  user = request.session.get('us',False)
   return render(request,'about.html',{'user':user,'page':3})
 
 def event(request):
   events = Event.objects.all()
-  user = request.session.get('username',False)
+  user = request.session.get('us',False)
   return render(request,'event.html',{'user':user,'events':events,'page':3})
 
 def detail(request,id):
@@ -71,7 +71,8 @@ def detail(request,id):
     blog.view += 1
     blog.save()
     blog.content = markdown(blog.content)
-    user = request.session.get('username',False)
-    return render(request,'blog.html',{'user':user,'blog':blog,'page':1})
+    user = request.session.get('us',False)
+    comments = Comment.objects.filter(blog=id)
+    return render(request,'blog.html',{'comments':comments,'user':user,'blog':blog,'page':1})
   except Blog.DoesNotExist as err:
     return HttpResponse(status=404)

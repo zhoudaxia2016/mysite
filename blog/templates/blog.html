@@ -29,6 +29,26 @@
   </div>
 </div>
 
+<div class="comments">
+  <h2> {{ comments | length }} 条评论 </h2>
+
+  <form class="post-comment" method="post" action="/comment/">
+    {% csrf_token %}
+    <textarea name="content" cols="20"></textarea><br>
+    <input type="submit" value="提交" class="submit">
+    <input type="hidden" name="blog" value="{{ blog.id }}">
+  </form>
+
+  {% for comment in comments %}
+  <div class="comment">
+    <div class="comment-user">{{ comment.user}} 说：</div>
+    <div class="comment-time">{{ comment.publish_time | date:'m-d' }}</div>
+    <p class="comment-content">{{ comment.content }}</p>
+  </div>
+  {% endfor %}
+
+</div>
+
 {% include 'common/footer.html' %}
 </body>
 </html>

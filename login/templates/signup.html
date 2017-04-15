@@ -16,14 +16,17 @@
     <h2>注册</h2>
     <div>
       <span>用户名</span><input type="text" class="username" name="username"><br>
+      <p class="msg">请输入长度4到30的用户名</p>
     </div>
     <div>
       <span>密码</span> <input type="password" class="password"><br>
+      <p class="msg">请输入长度6到30的密码</p>
     </div>
     <div>
       <span>确认密码</span> <input type="password" class="password" name="password"><br>
+      <p class="msg">请确认密码</p>
     </div>
-    <input type="submit" value="确定">
+    <input type="submit" class="submit" value="确定">
   </form>
 {% include 'common/footer.html' %}
 </body>

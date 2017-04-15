@@ -34,7 +34,7 @@ def index(request):
   tags = Tag.objects.all()
   posts = sort(request,posts)
   posts = filter(request,posts)
-  user = request.session.get('user',False)
+  user = request.session.get('username',False)
   print(user)
   return render(request,'index.html',{'user':user,'posts':posts,'page':0,'family':family,'tags':tags})
 
@@ -45,7 +45,7 @@ def blog(request):
   tags = Tag.objects.all()
   posts = sort(request,posts)
   posts = filter(request,posts)
-  user = request.session.get('user',False)
+  user = request.session.get('username',False)
   return render(request,'index.html',{'user':user,'posts':posts,'page':1,'family':family,'tags':tags})
 
 def demo(request):
@@ -53,16 +53,16 @@ def demo(request):
   tags = Tag.objects.all()
   posts = sort(request,posts)
   posts = filter(request,posts)
-  user = request.session.get('user',False)
+  user = request.session.get('username',False)
   return render(request,'index.html',{'user':user,'posts':posts,'page':2,'tags':tags})
 
 def about(request):
-  user = request.session.get('user',False)
+  user = request.session.get('username',False)
   return render(request,'about.html',{'user':user,'page':3})
 
 def event(request):
   events = Event.objects.all()
-  user = request.session.get('user',False)
+  user = request.session.get('username',False)
   return render(request,'event.html',{'user':user,'events':events,'page':3})
 
 def detail(request,id):
@@ -71,6 +71,7 @@ def detail(request,id):
     blog.view += 1
     blog.save()
     blog.content = markdown(blog.content)
-    return render(request,'blog.html',{'blog':blog,'page':1})
+    user = request.session.get('username',False)
+    return render(request,'blog.html',{'user':user,'blog':blog,'page':1})
   except Blog.DoesNotExist as err:
     return HttpResponse(status=404)

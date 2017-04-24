@@ -25,12 +25,12 @@ def sort(request,posts):
     else:
       return sorted(posts,key=lambda p:p.view,reverse=True)
   else:
-    return posts
+    return sorted(posts,key=lambda p:p.publish_time,reverse=True)
 
 def index(request):
   posts = []
-  posts.extend(Demo.objects.all())
   posts.extend(Blog.objects.all())
+  posts.extend(Demo.objects.all())
   family = Family.objects.all()
   tags = Tag.objects.all()
   posts = sort(request,posts)

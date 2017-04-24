@@ -34,6 +34,7 @@
   margin: 6px;
 }
 
+.blog li,
 .blog p{
   padding: 8px;
   margin: 5px;
@@ -69,6 +70,10 @@ pre{
   border: 1px dashed #aaa;
   font-size: 14px;
   font-weight: bold;
+}
+code{
+  word-break: break-all;
+  word-wrap: break-word;
 }
 .blog blockquote p{
   border-left: #26cb7c solid 5px;
@@ -140,4 +145,19 @@ pre{
   line-height: 24px;
   text-indent: 1em;
   word-break:break-all;
+}
+
+@media screen and (max-width:400px){
+  .blog,
+  .comments{
+    float: none;
+  }
+  .blog{
+    width: 100%;
+    margin-left: 0;
+  }
+  .comments{
+    width: 80%;
+    margin-left: 10%;
+  }
 }

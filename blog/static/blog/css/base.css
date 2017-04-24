@@ -76,3 +76,21 @@ footer{
   clear: both;
 }
 /* footer */
+
+@media screen and (max-width:400px){
+  .signin,
+  .signup,
+  aside{
+    display: none;
+  }
+  .logo{
+    margin-left: 5px;
+    margin-right: 10px;
+  }
+  nav li a{
+    padding: 0 5px;
+  }
+  nav li{
+    margin: 0 8px;
+  }
+}

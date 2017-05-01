@@ -2,10 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="Keywords" content="maozz,blog,js,css,front-end,{{blog.tag.all.0}}">
+  <meta name="Keywords" content="maozz,blog,js,css,web,front-end">
+  {% for tag in blog.tags.all %}
+  <meta name="Keywords" content="{{ tag }}">
+  {% endfor %}
   <meta name="description" content="这是maozz的博客，记录这学习前端的点点滴滴，记录着我的进步">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <title>博客文章-Maozz's blog</title>
+  <title>{{ blog.title }}_博客文章_Maozz's blog</title>
   {% load static %}
   <link href="{% static 'blog/css/base.css' %}" rel="stylesheet">
   <link href="{% static 'blog/css/blog.css' %}" rel="stylesheet">

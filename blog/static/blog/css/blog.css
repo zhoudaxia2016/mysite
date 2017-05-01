@@ -36,12 +36,14 @@
 
 .blog li,
 .blog p{
-  padding: 8px;
-  margin: 5px;
   color: #777;
   font-size: 16px;
   line-height: 28px;
   text-indent: 2em;
+}
+.blog p{
+  margin: 5px;
+  padding: 8px;
 }
 
 .blog-msg{
@@ -145,6 +147,10 @@ code{
   line-height: 24px;
   text-indent: 1em;
   word-break:break-all;
+}
+
+.blog img{
+  width: 75%;
 }
 
 @media screen and (max-width:400px){

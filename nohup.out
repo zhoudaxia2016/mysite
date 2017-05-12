@@ -8617,3 +8617,4 @@ Not Found: /favicon.ico
 [pid: 14547|app: 0|req: 4989/4989] 183.63.97.90 () {44 vars in 780 bytes} [Fri May 12 00:36:19 2017] GET /detail/31 => generated 4841 bytes in 38 msecs (HTTP/1.1 200) 4 headers in 256 bytes (1 switches on core 0)
 [pid: 14547|app: 0|req: 4990/4990] 183.63.97.90 () {44 vars in 852 bytes} [Fri May 12 00:36:22 2017] GET /index.html => generated 27739 bytes in 107 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
 [pid: 14547|app: 0|req: 4991/4991] 183.63.97.90 () {46 vars in 883 bytes} [Fri May 12 00:39:07 2017] GET /index.html => generated 27739 bytes in 173 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 14547|app: 0|req: 4992/4992] 183.63.97.90 () {46 vars in 883 bytes} [Fri May 12 00:41:13 2017] GET /index.html => generated 27739 bytes in 128 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)

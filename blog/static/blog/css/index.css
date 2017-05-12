@@ -6,10 +6,13 @@
   margin-left: 10%;
 }
 .post h2 a{
-  padding: 5px;
   color: #333;
   font-size: 20px;
 }
+.post h2{
+  padding: 5px;
+}
+
 .post{
   padding: 15px;
   margin-bottom: 30px;

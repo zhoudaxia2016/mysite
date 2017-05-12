@@ -186,6 +186,21 @@
   background: #495a80;
 }
 
+.page{
+  margin-top: 25px;
+}
+.page-number{
+  line-height: 25px;
+  font-size: 18px;
+  padding: 0 10px;
+  font-weight: bold;
+  color: #55f;
+  display: inline-block;
+  border: 2px solid #55a;
+  margin-right: 8px;
+  border-radius: 3px;
+}
+
 @media screen and (max-width:400px){
   .container{
     width: 100%;

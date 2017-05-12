@@ -14,10 +14,9 @@ def filter(request,posts):
     posts = [post for post in posts if post.family and post.family.name == t ]
   if ta:
     posts =  [post for post in posts if ta in[tag.name for tag in post.tags.all()]]
-  page = request.GET.get('page',1)
+  page = int(request.GET.get('page',1))
   pages = math.ceil(len(posts)/10)
-  print(pages)
-  posts = posts[(page-1)*10,page*10]
+  posts = posts[(page-1)*10:page*10]
   return [posts,page,pages]
   
 #排序
@@ -49,17 +48,19 @@ def blog(request):
   family = Family.objects.all()
   tags = Tag.objects.all()
   posts = sort(request,posts)
-  posts = filter(request,posts)
+  result = filter(request,posts)
+  posts = result[0]
   user = request.session.get('us',False)
-  return render(request,'index.html',{'user':user,'posts':posts,'page':1,'family':family,'tags':tags})
+  return render(request,'index.html',{'page':result[1],'pages':range(1,result[2]+1),'user':user,'posts':posts,'page':1,'family':family,'tags':tags})
 
 def demo(request):
   posts = Demo.objects.all()
   tags = Tag.objects.all()
   posts = sort(request,posts)
-  posts = filter(request,posts)
+  result = filter(request,posts)
+  posts = result[0]
   user = request.session.get('us',False)
-  return render(request,'index.html',{'user':user,'posts':posts,'page':2,'tags':tags})
+  return render(request,'index.html',{'page':result[1],'pages':range(1,result[2]+1),'user':user,'posts':posts,'page':2,'tags':tags})
 
 def about(request):
   user = request.session.get('us',False)

@@ -27,7 +27,11 @@
       </div>
     </div>
     <div class="main">
-      <h2>{{ post.title }}</h2>
+      {% if post.source %}
+      <h2><a href="{{ post.source }}">{{ post.title }}</a></h2>
+      {% else %}
+      <h2><a href="/detail/{{ post.id }}">{{ post.title }}</a></h2>
+      {% endif %}
       <p>{{ post.intro }}</p>
     </div>
     <div class="msg">

@@ -2,7 +2,9 @@
 *{margin: 0; padding: 0;}
 li{list-style: none;}
 a{text-decoration: none;}
+a{color: #333}
 a:hover{color: #495a80;}
+a:link{color: #333}
 /* css-reset */
 
 body{background: #f8f8fa;}

@@ -200,6 +200,10 @@
   margin-right: 8px;
   border-radius: 3px;
 }
+.current-page{
+  color: #eee;
+  background: #495a80;
+}
 
 @media screen and (max-width:400px){
   .container{
@@ -217,5 +221,8 @@
   }
   .type{
     display: none;
+  }
+  .page{
+    margin-left: 20px;
   }
 }

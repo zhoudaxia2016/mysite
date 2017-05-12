@@ -40,7 +40,7 @@ def index(request):
   result = filter(request,posts)
   posts = result[0]
   user = request.session.get('us',False)
-  return render(request,'index.html',{'page':result[1],'pages':range(1,result[2]+1),'user':user,'posts':posts,'page':0,'family':family,'tags':tags})
+  return render(request,'index.html',{'pageNum':result[1],'pages':range(1,result[2]+1),'user':user,'posts':posts,'page':0,'family':family,'tags':tags})
 
 
 def blog(request):

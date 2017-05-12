@@ -3,6 +3,7 @@ from .models import *
 from django.http import HttpResponse
 from markdown2 import markdown
 from comment.models import Comment
+import math
 
 # Create your views here.
 # 获取标签或者类别
@@ -10,11 +11,14 @@ def filter(request,posts):
   t = request.GET.get('t',False)
   ta = request.GET.get('ta',False)
   if t:
-    return [post for post in posts if post.family and post.family.name == t ]
-  elif ta:
-    return [post for post in posts if ta in[tag.name for tag in post.tags.all()]]
-  else:
-    return posts
+    posts = [post for post in posts if post.family and post.family.name == t ]
+  if ta:
+    posts =  [post for post in posts if ta in[tag.name for tag in post.tags.all()]]
+  page = request.GET.get('page',1)
+  pages = math.ceil(len(posts)/10)
+  print(pages)
+  posts = posts[(page-1)*10,page*10]
+  return [posts,page,pages]
   
 #排序
 def sort(request,posts):
@@ -34,9 +38,10 @@ def index(request):
   family = Family.objects.all()
   tags = Tag.objects.all()
   posts = sort(request,posts)
-  posts = filter(request,posts)
+  result = filter(request,posts)
+  posts = result[0]
   user = request.session.get('us',False)
-  return render(request,'index.html',{'user':user,'posts':posts,'page':0,'family':family,'tags':tags})
+  return render(request,'index.html',{'page':result[1],'pages':range(1,result[2]+1),'user':user,'posts':posts,'page':0,'family':family,'tags':tags})
 
 
 def blog(request):

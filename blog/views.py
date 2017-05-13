@@ -51,7 +51,7 @@ def blog(request):
   result = filter(request,posts)
   posts = result[0]
   user = request.session.get('us',False)
-  return render(request,'index.html',{'page':result[1],'pages':range(1,result[2]+1),'user':user,'posts':posts,'page':1,'family':family,'tags':tags})
+  return render(request,'index.html',{'pageNum':result[1],'pages':range(1,result[2]+1),'user':user,'posts':posts,'page':1,'family':family,'tags':tags})
 
 def demo(request):
   posts = Demo.objects.all()
@@ -60,7 +60,7 @@ def demo(request):
   result = filter(request,posts)
   posts = result[0]
   user = request.session.get('us',False)
-  return render(request,'index.html',{'page':result[1],'pages':range(1,result[2]+1),'user':user,'posts':posts,'page':2,'tags':tags})
+  return render(request,'index.html',{'pageNum':result[1],'pages':range(1,result[2]+1),'user':user,'posts':posts,'page':2,'tags':tags})
 
 def about(request):
   user = request.session.get('us',False)
